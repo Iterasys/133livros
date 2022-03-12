@@ -40,6 +40,21 @@ def teste_dividir_2_numeros(numero1, numero2, resultado_esperado):
     # Valida
     assert resultado_esperado == resultado_obtido
 
+lista_para_calcular_areas = [
+    (10, 15, 150),
+    (7, 0, 'um ou ambos os valores de largura e comprimento são zero ou negativos'),
+    (5, -7, 'um ou ambos os valores de largura e comprimento são zero ou negativos'),
+    (6, 'a', 'um ou ambos os valores de largura e comprimento são letras')
+]
+@pytest.mark.parametrize('largura, comprimento, resultado_esperado', lista_para_calcular_areas)
+def teste_calcular_area(largura, comprimento, resultado_esperado):
+    # Configura vem da lista
+
+    # Executa
+    resultado_obtido = main.calcular_area(largura, comprimento)
+
+    # Valida
+    assert resultado_obtido == resultado_esperado
 
 
 

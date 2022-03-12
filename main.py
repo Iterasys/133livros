@@ -16,8 +16,23 @@ def dividir_2_numeros(numero1, numero2):
     except ZeroDivisionError:
         return 'divisao por zero'
 
+def calcular_area(largura, comprimento):
+    if eh_numero(largura) and eh_numero(comprimento):
+        if largura > 0 and comprimento > 0:
+            return largura * comprimento
+        else:
+            return 'um ou ambos os valores de largura e comprimento são zero ou negativos'
+    else:
+        return 'um ou ambos os valores de largura e comprimento são letras'
 
-
+def eh_numero(candidato):
+    # tenta converter o valor candidato para float (numero com parte decimal)
+    # se der certo é um número, senão é um texto (string)
+    try:
+        float(candidato)
+    except ValueError:
+        return False    # se é texto (string)
+    return True         # se é numero (float)
 
 
 if __name__ == '__main__':  # acionador da execução do script
@@ -43,3 +58,11 @@ if __name__ == '__main__':  # acionador da execução do script
     # Divisão
     resultado = dividir_2_numeros(8, 4)
     print(f'O resultado da divisão é {resultado}')
+
+    # Area
+    resultado = calcular_area(5, 9)
+
+    if eh_numero(resultado):
+        print(f'Area = {resultado} m²')
+    else:
+        print(f'Mensagem: {resultado}')
