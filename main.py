@@ -35,6 +35,18 @@ def eh_numero(candidato):
     return True         # se é numero (float)
 
 
+def calcular_area_quadrado(lado):
+    return lado ** 2
+
+
+def calcular_area_retangulo(largura, comprimento):
+    return largura * comprimento
+
+
+def calcular_area_triangulo(largura, comprimento):
+    return (largura * comprimento) / 2
+
+
 if __name__ == '__main__':  # acionador da execução do script
     dizer_oi('José Correia')
 
